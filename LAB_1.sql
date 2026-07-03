@@ -86,3 +86,34 @@ INSERT INTO EMPLOYEE VALUES
 (111,'MAYANK', 'PUROHIT', 'ACCOUNT', 13000.00, 'NULL', 'MALE', 2020 );
 
 SELECT * FROM EMPLOYEE 
+
+
+CREATE TABLE MAYTABLE(
+ OrderID INT,
+CustomerName VARCHAR(50),
+City VARCHAR(30),
+Product VARCHAR(50),
+Category VARCHAR(30),
+Quantity INT,
+UnitPrice DECIMAL(10,2),
+OrderDate DATE,
+PaymentMode VARCHAR(20)
+);
+
+CREATE TABLE PATIENTRECORD (
+RecordID INT PRIMARY KEY,
+PatientName VARCHAR(100),
+DiagnosisCode VARCHAR(50),
+TreatmentPlan VARCHAR(250)
+);
+
+INSERT INTO PATIENTRECORD (RecordID, PatientName, DiagnosisCode, TreatmentPlan) VALUES
+(201, 'Amy Smith', 'ABC-123', 'Take vitamin pills daily.'),
+(202, 'Bob Jones', 'abc-999', 'Rest and drink water.'),
+(203, 'Cody Miller', 'XYZ-450', 'Take antibiotics daily.'),
+(204, 'Dan_Webb', 'E11', 'Check blood sugar.'),
+(205, '1st_Test', 'XYZ-%', 'Emergency care.');
+
+SELECT * FROM PATIENTRECORD
+DROP TABLE PATIENTRECORD
+
