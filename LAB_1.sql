@@ -117,3 +117,23 @@ INSERT INTO PATIENTRECORD (RecordID, PatientName, DiagnosisCode, TreatmentPlan) 
 SELECT * FROM PATIENTRECORD
 DROP TABLE PATIENTRECORD
 
+CREATE TABLE LIBRARYBORROWING (
+BorrowID INT PRIMARY KEY,
+MemberName VARCHAR (50),
+BookGenre VARCHAR (30),
+DaysBorrowed INT,
+FineAmount DECIMAL (8,2)
+);
+INSERT INTO LIBRARYBORROWING VALUES
+(1, 'Amit', 'Fiction', 12, 60.00),
+(2, 'Neha', 'Science', 8, 20.00),
+(3, 'Rahul', 'History', 15, 75.00),
+(4, 'Priya', 'Fiction', 5, 0.00),
+(5, 'Karan', 'Science', 10, 35.00),
+(6, 'Sneha', 'Technology', 20, 120.00),
+(7, 'Amit', 'History', 7, 15.00),
+(8, 'Neha', 'Technology', 18, 95.00),
+(9, 'Rahul', 'Fiction', 9, 30.00),
+(10, 'Priya', 'Science', 11, 45.00);
+SELECT * FROM LIBRARYBORROWING
+
