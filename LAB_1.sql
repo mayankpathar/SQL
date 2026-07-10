@@ -137,3 +137,20 @@ INSERT INTO LIBRARYBORROWING VALUES
 (10, 'Priya', 'Science', 11, 45.00);
 SELECT * FROM LIBRARYBORROWING
 
+CREATE TABLE Project_Assignments (
+Assignment_ID INT PRIMARY KEY,
+Employee_Name VARCHAR (50),
+Department VARCHAR (30),
+Hours_Worked INT
+);
+INSERT INTO Project_Assignments VALUES
+(101,'Ayaan','AI',38),
+(102,'Kiara','Cloud',45),
+(103,'Neel','AI',42),
+(104,'Meera','Security',31),
+(105,'Rohan','Cloud',50),
+(106,'Ishita','AI',29),
+(107,'Dev','Security',47),
+(108,'Sana','Cloud',36),
+(109,'Arjun','Security',41),
+(110,'Tara','AI',42);
