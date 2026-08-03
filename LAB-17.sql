@@ -294,4 +294,4 @@ SELECT o.Category,
 FROM Customers c JOIN Orders o 
 ON c.CustomerID = o.CustomerID
 GROUP BY o.Category, c.Membership;
-SELECT * FROM CustomerMembership
+SELECT * FROM CustomerMembershipS
