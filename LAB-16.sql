@@ -126,19 +126,19 @@ GROUP BY T.Team_name
 HAVING (MAX(P.Player_matches_played) - MIN(P.Player_matches_played)) > 5;
 
 --18. Display stadium city and total wins of teams in that city.
-SELECT S.Stadium_city, SUM(T.Team_wins) AS TotalWins
+SELECT S.Stadium_city, SUM(T.Team_wins)
 FROM STADIUM S JOIN TEAM T 
 ON S.Stadium_id = T.Home_Stadium_id
 GROUP BY S.Stadium_city;
 
 --19. Display team name and total number of players for each role (grouped by role).
-SELECT T.Team_name, P.Player_role, COUNT(P.Player_id) AS NumPlayers
+SELECT T.Team_name, P.Player_role, COUNT(P.Player_id)
 FROM TEAM T JOIN PLAYER P 
 ON T.Team_id = P.Team_id
 GROUP BY T.Team_name, P.Player_role;
 
 --20. Display team name and total number of players whose name starts with ‘A’
-SELECT T.Team_name, COUNT(P.Player_id) AS NumPlayers
+SELECT T.Team_name, COUNT(P.Player_id)
 FROM TEAM T JOIN PLAYER P 
 ON T.Team_id = P.Team_id
 WHERE P.Player_first_name LIKE 'A%'
