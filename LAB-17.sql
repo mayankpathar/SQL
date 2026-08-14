@@ -1,19 +1,135 @@
 --Part – A:
 --1. Create a view Employee_All with all columns.
+CREATE VIEW Employee_All
+AS
+SELECT * 
+FROM EMPLOYEE
+
+SELECT * FROM EMPLOYEE_ALL
+
+
 --2. Create a view Employee_NameDeptSalary having columns FirstName, Department and Salary.
+CREATE VIEW Employee_NameDeptSalary
+AS
+SELECT FIRSTNAME , DEPARTMENT , SALARY 
+FROM EMPLOYEE
+
+SELECT * FROM Employee_NameDeptSalary
+
+
 --3. Create a view Employee_Basic having columns EID, FirstName and City.
+CREATE VIEW Employee_Basic
+AS
+SELECT EID , FIRSTNAME , CITY 
+FROM EMPLOYEE
+
+SELECT * FROM Employee_Basic
+
+
 --4. Create a view IT_Employees that displays IT department data only.
+CREATE VIEW IT_Employees
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'IT'
+
+SELECT * FROM IT_Employees
+
+
 --5. Create a view HR_Employees that displays HR department data only.
+CREATE VIEW HR_Employees
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'HR'
+
+SELECT * FROM HR_Employees
+
+
 --6. Create a view Employee_2026 that displays employees joined in 2026 only.
+CREATE VIEW Employee_2026
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE JOININGYEAR = 2026
+
+SELECT * FROM Employee_2026
+
+
 --7. Create a view Patel_Employees that displays employees whose last name is PATEL.
+CREATE VIEW Patel_Employees
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE LASTNAME = 'PATEL'
+
+SELECT * FROM Patel_Employees
+
+
 --8. Create a view High_Salary_Emp having all columns but employees whose salary is more than 12000.
+CREATE VIEW High_Salary_Emp
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE SALARY > 12000
+
+SELECT * FROM High_Salary_Emp
+
+
 --9. Create a view that displays information of all employees whose salary is above 14000.
+CREATE VIEW Salary_Above_14000_Emp
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE SALARY > 14000
+
+SELECT * FROM Salary_Above_14000_Emp
+
+
 --10. Create a view that displays employees having salary below 10000.
+CREATE VIEW Salary_Below_10000_Emp
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE SALARY < 10000
+
+SELECT * FROM Salary_Below_10000_Emp
+
+
 --11. Create a view Server_Dept that displays Server department employees only.
+CREATE VIEW Server_Dept
+AS
+SELECT * 
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'SERVER'
+
+SELECT * FROM Server_Dept
+
+
 --12. Insert a new record into Employee_Basic view. (111, MEET, SURAT)
+INSERT INTO Employee_Basic
+VALUES (111, 'MEET', 'SURAT')
+
+SELECT * FROM Employee_Basic
+
+
 --13. Update the department of DEEP from ADMIN to IT in Employee_NameDeptSalary view.
+UPDATE Employee_NameDeptSalary
+SET DEPARTMENT = 'IT'
+WHERE FIRSTNAME = 'DEEP'
+
+SELECT * FROM Employee_NameDeptSalary
+
+
 --14. Delete an employee whose EID is 107 from Employee_Basic view.
+DELETE FROM Employee_Basic
+WHERE EID = 107
+
+SELECT * FROM Employee_Basic
+
+
 --15. Drop IT_Employees view from the database.
+DROP VIEW IT_Employees 
 
 
 --Part – B:

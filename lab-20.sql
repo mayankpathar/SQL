@@ -1,0 +1,24 @@
+--Part – A:
+--1. Display rank of students based on SPI.
+--2. Display dense rank of students based on SPI.
+--3. Display sequential number for each student record.
+--4. Display branch-wise rank of students.
+--5. Display branch-wise dense ranking of students.
+--6. Display branch-wise sequential numbering of students.
+--7. Display SNAME, Current SPI, Previous SPI and SPI Difference with previous student in ascending order of
+--SPI.
+--8. Display SNAME, Current SPI, Next SPI and SPI Difference with next student in descending order of SPI.
+--9. Display top 3 students based on SPI.
+--10. Display top 2 students from each branch.
+--Part – B:
+--11. Display 5th highest SPI.
+--12. Display 6th highest SPI.
+--13. Display students having same ranking.
+--14. Display SNAME, Previous SPI, Current SPI and Next SPI based on ascending order of SPI.
+--15. Display topper of each branch.
+--Part – C:
+--16. Display students whose SPI is greater than the previous student and less than the next student.
+--17. Display branch-wise second topper students.
+--18. Display students whose rank and dense rank are different.
+--19. Display consecutive students having same branch ordered by SPI.
+--20. Display students whose SPI difference with previous student is maximum.
