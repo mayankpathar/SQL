@@ -65,19 +65,70 @@ WITH SPI_TOP_3 AS(
 
 --Part – B:
 
---11. Display students SPI average belonging to Computer branch.
+-- 11. Display students SPI average belonging to Computer branch.
+WITH COMPUTER_AVERAGE AS
+(
+    SELECT AVG(SPI) AS AVG_SPI
+    FROM student
+    WHERE BRANCH = 'COMPUTER'
+)
+SELECT * FROM COMPUTER_AVERAGE;
 
---12. Display students whose SPI is greater than average SPI of his/her branch.
 
---13. Display branch having more than 2 students.
+-- 12. Display students whose SPI is greater than average SPI of his/her branch.
+WITH BRANCH_AVERAGE AS
+(
+    SELECT STDID, SNAME, BRANCH, SPI,
+           AVG(SPI) OVER
+           (
+               PARTITION BY BRANCH
+           ) AS AVG_BRANCH_SPI
+    FROM student
+)
+SELECT *
+FROM BRANCH_AVERAGE
+WHERE SPI > AVG_BRANCH_SPI;
 
---14. Display branches having average SPI between 7 and 9
 
---15. Display students whose SPI is lower than overall average SPI.
+-- 13. Display branch having more than 2 students.
+WITH BRANCH_COUNT AS
+(
+    SELECT BRANCH, COUNT(*) AS TOTAL_STUDENTS
+    FROM student
+    GROUP BY BRANCH
+)
+SELECT *
+FROM BRANCH_COUNT
+WHERE TOTAL_STUDENTS > 2;
+
+
+-- 14. Display branches having average SPI between 7 and 9.
+WITH BRANCH_AVERAGE AS
+(
+    SELECT BRANCH, AVG(SPI) AS AVG_SPI
+    FROM student
+    GROUP BY BRANCH
+)
+SELECT *
+FROM BRANCH_AVERAGE
+WHERE AVG_SPI BETWEEN 7 AND 9;
+
+
+-- 15. Display students whose SPI is lower than overall average SPI.
+WITH OVERALL_AVERAGE AS
+(
+    SELECT AVG(SPI) AS AVG_SPI
+    FROM student
+)
+SELECT s.*
+FROM student s
+, OVERALL_AVERAGE a
+WHERE s.SPI < a.AVG_SPI;
 
 --Part – C:
 
 --16. Display branches having exactly one student.
+
 
 --17. Display branch having highest average SPI.
 
