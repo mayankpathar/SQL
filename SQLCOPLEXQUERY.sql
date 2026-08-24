@@ -169,7 +169,7 @@ WHERE D.RELEASEYEAR > 2010;
 
 --20. List all directors and the number of movies they have directed, but only include directors who have
 --directed more than 1 movie.
-SELECT DIRECTOR, COUNT(*) AS MOVIECOUNT
+SELECT DIRECTOR, COUNT(MOVIEID) AS MOVIECOUNT
 FROM MOVIEDETAILS
 GROUP BY DIRECTOR
-HAVING COUNT(*) > 1;
+HAVING COUNT(MOVIEID) > 1;
